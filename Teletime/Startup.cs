@@ -25,8 +25,8 @@ namespace Teletime
         {
             services.AddMvc();
 
-            var connection = @"Server=mssql6.gear.host;Database=teletime;User Id=teletime;Password=t3l3t!m3;";
-			services.AddDbContext<TeletimeContext>(options => options.UseSqlServer(connection));
+            var connection = Configuration.GetConnectionString("TeletimeContext");
+            services.AddDbContext<TeletimeContext>(options => options.UseSqlServer(connection));
 
 		}
 
