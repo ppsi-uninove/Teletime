@@ -51,21 +51,21 @@ namespace Teletime
                     template: "{controller}/{action=Index}/{id?}");
             });
 
-			//try
-			//{
-			//	using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>()
-			//		.CreateScope())
-			//	{
+            try
+            {
+                using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>()
+                    .CreateScope())
+                {
 
-			//		serviceScope.ServiceProvider.GetService<TeletimeContext>()
-			//			.Database.Migrate();
-			//	}
-			//}
-			//catch (Exception e)
-			//{
-			//	var msg = e.Message;
-			//	var stacktrace = e.StackTrace;
-			//}
+                    serviceScope.ServiceProvider.GetService<TeletimeContext>()
+                        .Database.Migrate();
+                }
+            }
+            catch (Exception e)
+            {
+                var msg = e.Message;
+                var stacktrace = e.StackTrace;
+            }
         }
     }
 }
