@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Teletime.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Teletime
 {
@@ -22,7 +24,11 @@ namespace Teletime
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-        }
+
+            var connection = @"Server=mssql6.gear.host;Database=teletime;User Id=teletime;Password=t3l3t!m3;";
+			services.AddDbContext<TeletimeContext>(options => options.UseSqlServer(connection));
+
+		}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -35,7 +35,7 @@ namespace Teletime.Models
             set;
         }
 
-        public long CPFResponsavel
+        public long? CPFResponsavel
         {
             get;
             set;

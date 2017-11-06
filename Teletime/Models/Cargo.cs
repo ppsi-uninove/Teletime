@@ -10,7 +10,7 @@ namespace Teletime.Models
             Funcionarios = new List<Funcionario>();
         }
 
-        public int IDCargo
+        public int IdCargo
         {
             get;
             set;
