@@ -1,0 +1,60 @@
+@page
+@model Teletime.Pages.Funcionarios.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Funcionario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Funcionario.CPF" />
+            <div class="form-group">
+                <label asp-for="Funcionario.Nome" class="control-label"></label>
+                <input asp-for="Funcionario.Nome" class="form-control" />
+                <span asp-validation-for="Funcionario.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.IdDepartamento" class="control-label"></label>
+                <select asp-for="Funcionario.IdDepartamento" class="form-control" asp-items="ViewBag.IdDepartamento"></select>
+                <span asp-validation-for="Funcionario.IdDepartamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.IdCargo" class="control-label"></label>
+                <select asp-for="Funcionario.IdCargo" class="form-control" asp-items="ViewBag.IdCargo"></select>
+                <span asp-validation-for="Funcionario.IdCargo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.CPFResponsavel" class="control-label"></label>
+                <select asp-for="Funcionario.CPFResponsavel" class="form-control" asp-items="ViewBag.CPFResponsavel"></select>
+                <span asp-validation-for="Funcionario.CPFResponsavel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.DataAdmissao" class="control-label"></label>
+                <input asp-for="Funcionario.DataAdmissao" class="form-control" />
+                <span asp-validation-for="Funcionario.DataAdmissao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.DataDemissao" class="control-label"></label>
+                <input asp-for="Funcionario.DataDemissao" class="form-control" />
+                <span asp-validation-for="Funcionario.DataDemissao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

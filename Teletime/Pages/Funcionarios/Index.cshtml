@@ -1,0 +1,66 @@
+@page
+@model Teletime.Pages.Funcionarios.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Funcionario[0].Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Funcionario[0].DataAdmissao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Funcionario[0].DataDemissao)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionario[0].Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionario[0].Departamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionario[0].Responsavel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Funcionario) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAdmissao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDemissao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo.IdCargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento.IdDepartamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsavel.CPF)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CPF">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CPF">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CPF">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

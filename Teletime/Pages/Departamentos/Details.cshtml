@@ -1,0 +1,25 @@
+@page
+@model Teletime.Pages.Departamentos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Departamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento.NomeDepartamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Departamento.NomeDepartamento)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Departamento.IdDepartamento">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
