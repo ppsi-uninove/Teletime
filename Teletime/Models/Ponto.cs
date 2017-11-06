@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+
 namespace Teletime.Models
 {
     public class Ponto
@@ -20,12 +22,14 @@ namespace Teletime.Models
 
         }
 
+        [DisplayName("Entrada/Saída")]
         public string EntradaSaida
         {
             get;
             set;
         }
 
+        [DisplayName("Data/Hora")]
         public DateTime DataHora
         {
             get;

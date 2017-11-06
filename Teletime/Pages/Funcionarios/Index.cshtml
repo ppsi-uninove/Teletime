@@ -2,13 +2,13 @@
 @model Teletime.Pages.Funcionarios.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Funcionários";
 }
 
-<h2>Index</h2>
+<h2>Cadastro de Funcionários</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Criar Novo Funcionário</a>
 </p>
 <table class="table">
     <thead>
@@ -47,18 +47,18 @@
                 @Html.DisplayFor(modelItem => item.DataDemissao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cargo.IdCargo)
+                @Html.DisplayFor(modelItem => item.Cargo.NomeCargo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Departamento.IdDepartamento)
+                @Html.DisplayFor(modelItem => item.Departamento.NomeDepartamento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Responsavel.CPF)
+                @Html.DisplayFor(modelItem => item.Responsavel.Nome)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.CPF">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CPF">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CPF">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.CPF">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.CPF">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CPF">Apagar</a>
             </td>
         </tr>
 }

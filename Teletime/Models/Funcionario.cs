@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Teletime.Models
 {
@@ -23,30 +24,36 @@ namespace Teletime.Models
             set;
         }
 
+        [DisplayName("Id Departamento")]
         public int IdDepartamento
         {
             get;
             set;
         }
 
+        [DisplayName("Id Cargo")]
         public int IdCargo
         {
             get;
             set;
         }
 
+
+        [DisplayName("CPF Responsável")]
         public long? CPFResponsavel
         {
             get;
             set;
         }
 
+        [DisplayName("Admissão")]
         public DateTime DataAdmissao
         {
             get;
             set;
         }
    
+        [DisplayName("Demissão")]
         public DateTime? DataDemissao
         {
             get;
@@ -65,6 +72,7 @@ namespace Teletime.Models
             set;
         }
 
+        [DisplayName("Responsável")]
         public Funcionario Responsavel
         {
             get;

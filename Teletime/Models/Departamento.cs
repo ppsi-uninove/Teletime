@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Teletime.Models
 {
@@ -16,6 +17,7 @@ namespace Teletime.Models
             set;
         }
 
+        [DisplayName("Departamento")]
         public string NomeDepartamento
         {
             get;

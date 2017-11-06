@@ -38,9 +38,9 @@ namespace Teletime.Pages.Funcionarios
             {
                 return NotFound();
             }
-           ViewData["IdCargo"] = new SelectList(_context.Cargos, "IdCargo", "IdCargo");
-           ViewData["IdDepartamento"] = new SelectList(_context.Departamentos, "IdDepartamento", "IdDepartamento");
-           ViewData["CPFResponsavel"] = new SelectList(_context.Funcionarios, "CPF", "CPF");
+           ViewData["IdCargo"] = new SelectList(_context.Cargos, "IdCargo", "NomeCargo");
+           ViewData["IdDepartamento"] = new SelectList(_context.Departamentos, "IdDepartamento", "NomeDepartamento");
+           ViewData["CPFResponsavel"] = new SelectList(_context.Funcionarios, "CPF", "Nome");
             return Page();
         }
 
